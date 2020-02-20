@@ -12,7 +12,7 @@ Due Date: {{finishBy}}<br/>
 			<div class="modal-body">
 				<form id="messageForm" action="/message/new" method="post">
 					<label for="to">Enter the name of the recipient</label>
-					<input type="text" class="form-control" id="to" name="to" value="{{authorName}}"/>
+					<input type="text" class="form-control" id="to" name="toUser" value="{{authorName}}"/>
 			
 					<label for="title">Enter the Title</label>
 					<input type="text" class="form-control" id="title" name="title"/>
@@ -23,7 +23,7 @@ Due Date: {{finishBy}}<br/>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Send Message</button>
+				<button type="button" class="btn btn-primary" onclick="document.getElementById('messageForm').submit();">Send Message</button>
 			</div>
 		</div>
 	</div>

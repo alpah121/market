@@ -8,7 +8,7 @@
 	{{#each messages}}
 	<div class="row">
 	<h2>{{title}}</h2>
-	<small class="text-muted">From {{from}}</small><button type="button" class="btn btn-danger" onclick="deleteMessage({{id}})">Delete Message</button>
+	<small class="text-muted">From {{fromUser}}</small>
 	<p>{{body}}</p>
 	</div>
 	{{/each}}

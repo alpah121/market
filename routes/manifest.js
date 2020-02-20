@@ -69,6 +69,10 @@ router.post('/message/new', messages.create);
 
 router.get('/message/delete', messages.delete);
 
+router.get('/testMessages', (req, res) => {
+	res.render('testMessages');
+});
+
 function isLoggedIn(req, res, next)
 {
 if (req.isAuthenticated())

@@ -69,8 +69,15 @@ router.post('/message/new', messages.create);
 
 router.get('/message/delete', messages.delete);
 
+//messages: to, from, title, body, createdOn, id
 router.get('/testMessages', (req, res) => {
-	res.render('testMessages');
+	res.render('testMessages', {messages : 
+		[
+		{to : "raven", fromUser : "raven", title : "hello", body : "this is a test", createdOn : "12-05-1994", id : "1"},
+		{to : "raven", fromUser : "raven", title : "hola", body : "this is another test", createdOn : "12-05-1994", id : "2"},
+		{to : "raven", fromUser : "raven", title : "mi gusto", body : "this is a longer paragraph showing how this element deals with longer text.", createdOn : "12-05-1994", id : "3"}
+		]
+	});
 });
 
 function isLoggedIn(req, res, next)

@@ -8,6 +8,9 @@
 	<div class="row" style="color: red">
 		{{errorMessage}}
 	</div>
+	<div class="panel-default">
+		<div class="panel-heading">Update Requests</div>
+		<div class="panel-body">
 	{{#each courses}}
 	<div class="row">
 	
@@ -42,6 +45,11 @@
 		</div>
 	</div>
 	{{/each}}
+	</div>
+	</div>
+	<div class="panel-default">
+		<div class="panel-heading">Create A Request</div>
+		<div class="panel-body">
 	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#createCourse" aria-expanded="true" aria-controls="createCourse">Create New Request</button>
 			<div class="collapse show" id="createCourse"> 
 			<div class="card card-body">
@@ -71,7 +79,8 @@
 				</form>
 			</div>
 		</div>
-
+	</div>
+	</div>
 </div>
 
 <script src="/public/js/dashboard.js"></script>

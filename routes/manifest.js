@@ -4,6 +4,7 @@ var passport = require("passport");
 var navbar = [];
 
 var messages = require('./messages');
+var api = require('./api');
 var crud = require('./crud');
 
 function getSQLResponse(fallback, sql)
@@ -22,6 +23,7 @@ router.get('/', function(req, res) {
 	res.render('home');
 	});
 
+router.get('/api', api);
 
 router.get('/signUp', (req, res) => {
 res.render('signUp');	
@@ -48,26 +50,26 @@ req.logout();
 res.redirect('/');	
 });
 
-router.get('/requests', crud.read);
+router.get('/requests', isLoggedIn, crud.read);
 
-router.get('/request', crud.detail);
+router.get('/request', isLoggedIn, crud.detail);
 
 router.post('/request/new', isLoggedIn, crud.create);
 
-router.post('/request/update', crud.update);
+router.post('/request/update', isLoggedIn, crud.update);
 
-router.get('/request/delete', crud.delete);
+router.get('/request/delete', isLoggedIn, crud.delete);
 
-router.get('/dashboard', crud.dashboard);	
+router.get('/dashboard', isLoggedIn, crud.dashboard);	
 
 
-router.get('/messages', messages.read);
+router.get('/messages', isLoggedIn, messages.read);
 
-router.get('/message', messages.detail);
+router.get('/message', isLoggedIn, messages.detail);
 
-router.post('/message/new', messages.create);
+router.post('/message/new', isLoggedIn, messages.create);
 
-router.get('/message/delete', messages.delete);
+router.get('/message/delete', isLoggedIn, messages.delete);
 
 //messages: to, from, title, body, createdOn, id
 router.get('/testMessages', (req, res) => {
